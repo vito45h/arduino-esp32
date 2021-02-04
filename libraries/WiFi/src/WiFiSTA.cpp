@@ -151,6 +151,7 @@ wl_status_t WiFiSTAClass::begin(const char* ssid, const char *passphrase, int32_
     if(channel > 0 && channel <= 13) {
         conf.sta.channel = channel;
     }
+    conf.sta.scan_method = WIFI_ALL_CHANNEL_SCAN;
 
     wifi_config_t current_conf;
     esp_wifi_get_config(WIFI_IF_STA, &current_conf);
